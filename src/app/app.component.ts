@@ -40,6 +40,11 @@ export class AppComponent {
         format: 'image/png',
         transparent: true,
       }),
+      'Transboundary River Basins around the World': tileLayer.wms('http://ihp-wins.unesco.org/geoserver/ows?SERVICE=WMS&', { // Found via: https://www.geoseer.net/
+        layers: 'geonode:transboundary_river_basins',
+        format: 'image/png',
+        transparent: true,
+      }),
     }
   };
 }
