@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { latLng, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wb-angular-leaflet';
+  title = 'World Bank Central IT - Angular/Node/Leaflet demo';
+  options = {
+    layers: [
+      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+    ],
+    zoom: 17,
+    center: latLng(38.898947, -77.042478)
+  };
 }
