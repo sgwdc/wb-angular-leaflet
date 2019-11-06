@@ -5,6 +5,7 @@
   <div style="height: calc(100vh - 100px);"
      leaflet 
      [leafletOptions]="options"
-     [leafletLayersControl]="layersControl">
+     [leafletLayersControl]="layersControl"
+     (leafletMapReady)="onMapReady($event)">
   </div>
 </div>

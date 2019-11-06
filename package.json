@@ -23,6 +23,7 @@
     "@asymmetrik/ngx-leaflet": "4.0.0",
     "core-js": "^2.5.4",
     "leaflet": "^1.5.1",
+    "leaflet-geosearch": "^2.7.0",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

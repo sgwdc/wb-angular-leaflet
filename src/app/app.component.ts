@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { latLng, tileLayer } from 'leaflet';
+import * as L from 'leaflet';
+import {
+  GeoSearchControl,
+  EsriProvider,
+} from 'leaflet-geosearch';
 
 @Component({
   selector: 'app-root',
@@ -47,4 +52,14 @@ export class AppComponent {
       }),
     }
   };
+
+  // Called when the map has finished loading
+  onMapReady(map: L.Map) {
+    // Add Esri geocoder to the map
+    const provider = new EsriProvider();
+    const searchControl = new GeoSearchControl({
+      provider: provider,
+    });
+    map.addControl(searchControl);
+  }
 }
