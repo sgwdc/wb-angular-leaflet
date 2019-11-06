@@ -15,6 +15,14 @@ export class AppComponent {
   baseLayers = [
     tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'OpenCycleMap' }),
     tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
+    tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Transport' }),
+    tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Landscape' }),
+    tileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Outdoors' }),
+    tileLayer('https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Transport Dark' }),
+    tileLayer('https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Spinal Map' }),
+    tileLayer('https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Pioneer' }),
+    tileLayer('https://tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Mobile Atlas' }),
+    tileLayer('https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'Neighbourhood' }),
   ];
   options = {
     /* World Bank HQ
@@ -33,6 +41,14 @@ export class AppComponent {
     baseLayers: {
       'OpenCycleMap': this.baseLayers[0],
       'OpenStreetMap': this.baseLayers[1],
+      'Transport': this.baseLayers[2],
+      'Transport Dark': this.baseLayers[5],
+      'Landscape': this.baseLayers[3],
+      'Outdoors': this.baseLayers[4],
+      'Spinal Map': this.baseLayers[6],
+      'Pioneer': this.baseLayers[7],
+      'Mobile Atlas': this.baseLayers[8],
+      'Neighbourhood': this.baseLayers[9],
     },
     overlays: {
       'Gridded Population of the World, Version 4 (2015)': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
