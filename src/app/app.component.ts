@@ -13,15 +13,10 @@ import {
 })
 export class AppComponent {
   baseLayers = [
-    tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
     tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'OpenCycleMap' }),
+    tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
   ];
   options = {
-    /*
-    layers: [
-      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
-    ],
-    */
     /* World Bank HQ
     zoom: 17,
     center: latLng(38.898947, -77.042478)
@@ -36,8 +31,8 @@ export class AppComponent {
   };
   layersControl = {
     baseLayers: {
-      'OpenStreetMap': this.baseLayers[0],
-      'OpenCycleMap': this.baseLayers[1],
+      'OpenCycleMap': this.baseLayers[0],
+      'OpenStreetMap': this.baseLayers[1],
     },
     overlays: {
       'Gridded Population of the World, Version 4 (2015)': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
