@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { latLng, tileLayer } from 'leaflet';
+import { latLng, tileLayer, icon } from 'leaflet';
 import * as L from 'leaflet';
 import {
   GeoSearchControl,
@@ -59,6 +59,13 @@ export class AppComponent {
     const provider = new EsriProvider();
     const searchControl = new GeoSearchControl({
       provider: provider,
+      marker: {
+        // Configure Leaflet to use the correct URLs as marker images
+        icon: icon({
+          iconUrl: 'src/assets/marker-icon.png',
+          shadowUrl: 'src/assets/marker-shadow.png'
+        })
+      }
     });
     map.addControl(searchControl);
   }
