@@ -1,0 +1,26 @@
+div#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+div.header {
+  text-align: center;
+}
+div.header div.logo {
+  margin: 12px 0 6px 0;
+}
+div.header div.title {
+  background-color: #009fda;
+  padding: 20px 0 12px 0;
+}
+div.map {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+div.footer {
+  background-color: #000;
+  text-align: center;
+}
+div.footer a {
+  color: #fff;
+}

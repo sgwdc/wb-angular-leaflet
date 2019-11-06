@@ -12,10 +12,9 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'World Bank Central IT - Angular/Node/Leaflet demo';
   options = {
     layers: [
-      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' })
+      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
     ],
     /* World Bank HQ
     zoom: 17,
@@ -27,30 +26,34 @@ export class AppComponent {
     */
     // Earth
     zoom: 2,
-    center: latLng(30, 0)
+    center: latLng(30, 0),
   };
   layersControl = {
     baseLayers: {
-      'Open Street Map': tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' }),
-      'Open Cycle Map': tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: '...' })
+      'OpenStreetMap': tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: 'OpenStreetMap' }),
+      'OpenCycleMap': tileLayer('https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=081af2bf069048f9ac676796465d77bf', { maxZoom: 18, attribution: 'OpenCycleMap' }),
     },
     overlays: {
-      'GPWv4: Population Density - 2015': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
+      'Gridded Population of the World, Version 4 (2015)': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
         layers: 'gpw-v4:gpw-v4-population-density_2015',
         format: 'image/png',
         transparent: true,
       }),
-      'Probabilities of Urban Expansion to 2030': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
+      'Global Grid of Probabilities of Urban Expansion to 2030, v1': tileLayer.wms('https://sedac.ciesin.columbia.edu/geoserver/wms', {
         layers: 'lulc:lulc-global-grid-prob-urban-expansion-2030',
         format: 'image/png',
         transparent: true,
       }),
-      'Transboundary River Basins around the World': tileLayer.wms('http://ihp-wins.unesco.org/geoserver/ows?SERVICE=WMS&', { // Found via: https://www.geoseer.net/
+      'UNESCO Transboundary River Basins around the World': tileLayer.wms('http://ihp-wins.unesco.org/geoserver/ows?SERVICE=WMS&', { // Found via: https://www.geoseer.net/
         layers: 'geonode:transboundary_river_basins',
         format: 'image/png',
         transparent: true,
       }),
-    }
+    },
+  };
+  layersControlOptions = {
+    // Always show the layer options
+    collapsed: false,
   };
 
   // Called when the map has finished loading
